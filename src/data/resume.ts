@@ -41,22 +41,22 @@ export const education: Education[] = [
 export const personalInfo: PersonalInfo = {
   name: 'Ahmad Waqar',
   role: 'Software Engineer',
-  bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration, database management, and Agile methodologies. Proficient in building secure web applications with authentication and real-time features.',
-  avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
+  bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration, database management, and Agile methodologies. Proficient in building secure web applications with authentication and real-time features.',
+  avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
   location: 'Lahore, Pakistan',
   email: 'ahmedwaqar2002@gmail.com',
   phone: '+92-344-0479545',
   socialLinks: [
     {
       platform: 'GitHub',
-      url: 'https://github.com/ahmedwaqar',
+      url: 'https://github.com/ahmadwaqar17',
       icon: 'FaGithub',
     },
     {
       platform: 'LinkedIn',
-      url: 'https://linkedin.com/in/ahmad-waqar',
+      url: 'https://www.linkedin.com/in/ahmad-waqar-05413021b/',
       icon: 'FaLinkedin',
     }
   ],
-  resume: '/resume.pdf',
+  resume: 'https://drive.google.com/file/d/1pf2UVBReWzHUGZtg3ZDE_M9rj2Jk2KlX/view',
 };

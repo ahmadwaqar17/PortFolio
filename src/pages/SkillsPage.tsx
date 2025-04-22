@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaReact, FaJs, FaHtml5, FaNodeJs, FaVuejs, FaGitAlt, FaMobileAlt, FaPencilRuler, FaDocker, FaAws } from 'react-icons/fa';
-import { SiTypescript, SiStyledcomponents, SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql, SiFirebase, SiJest, SiWebpack } from 'react-icons/si';
+import { FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaCode, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired } from 'react-icons/fa';
+import { SiTypescript, SiExpress, SiPostgresql } from 'react-icons/si';
 import Section from '../components/ui/Section';
 import SkillCard from '../components/ui/SkillCard';
 import { skills } from '../data';
@@ -101,23 +101,26 @@ const SkillsPage = () => {
               'FaJs': FaJs,
               'FaHtml5': FaHtml5,
               'FaNodeJs': FaNodeJs,
-              'FaVuejs': FaVuejs,
               'FaGitAlt': FaGitAlt,
-              'FaMobileAlt': FaMobileAlt,
-              'FaPencilRuler': FaPencilRuler,
               'FaDocker': FaDocker,
               'FaAws': FaAws,
+              'FaPython': FaPython,
+              'FaDatabase': FaDatabase,
+              'FaServer': FaServer,
+              'FaDesktop': FaDesktop,
+              'FaFileCode': FaFileCode,
+              'FaTerminal': FaTerminal,
+              'FaCode': FaCode,
+              'FaWindows': FaWindows,
+              'FaMicrosoft': FaMicrosoft,
+              'FaLaptop': FaLaptop,
+              'FaCodeBranch': FaCodeBranch,
+              'FaHashtag': FaHashtag,
+              'FaCogs': FaCogs,
+              'FaNetworkWired': FaNetworkWired,
               'SiTypescript': SiTypescript,
-              'SiStyledcomponents': SiStyledcomponents,
-              'SiTailwindcss': SiTailwindcss,
-              'SiNextdotjs': SiNextdotjs,
               'SiExpress': SiExpress,
-              'SiMongodb': SiMongodb,
-              'SiPostgresql': SiPostgresql,
-              'SiGraphql': SiGraphql,
-              'SiFirebase': SiFirebase,
-              'SiJest': SiJest,
-              'SiWebpack': SiWebpack
+              'SiPostgresql': SiPostgresql
             };
 
             const IconComponent = iconMap[skill.icon];

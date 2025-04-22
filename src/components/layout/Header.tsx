@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaLaptopCode, FaBlog, FaEnvelope, FaFileAlt, FaQuoteRight } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaLaptopCode, FaBlog, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 import { media } from '../../styles/media';
 
 const HeaderContainer = styled(motion.header)`
@@ -230,7 +230,7 @@ const Header = () => {
     { path: '/blog', label: 'Blog', icon: <FaBlog /> },
     { path: '/contact', label: 'Contact', icon: <FaEnvelope /> },
     { path: '/resume', label: 'Resume', icon: <FaFileAlt /> },
-    { path: '/testimonials', label: 'Testimonials', icon: <FaQuoteRight /> },
+
   ];
 
   return (

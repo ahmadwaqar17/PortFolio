@@ -287,8 +287,8 @@ const AboutPage = () => {
                   })}
                 </SocialLinks>
 
-                <Button as="a" href={personalInfo.resume} download>
-                  <FaDownload /> Download Resume
+                <Button as="a" href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                  <FaDownload /> View Resume
                 </Button>
               </motion.div>
             </ProfileInfo>

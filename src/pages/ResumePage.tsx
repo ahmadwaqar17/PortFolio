@@ -30,11 +30,11 @@ const SectionTitle = styled.h2`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  
+
   svg {
     color: var(--primary-color);
   }
-  
+
   &:after {
     content: '';
     flex: 1;
@@ -46,7 +46,7 @@ const SectionTitle = styled.h2`
 
 const TimelineContainer = styled.div`
   position: relative;
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -62,11 +62,11 @@ const TimelineItem = styled(motion.div)`
   position: relative;
   padding-left: 60px;
   padding-bottom: 2.5rem;
-  
+
   &:last-child {
     padding-bottom: 0;
   }
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -117,7 +117,7 @@ const TimelineList = styled.ul`
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  
+
   li {
     margin-bottom: 0.5rem;
   }
@@ -142,7 +142,7 @@ const SkillsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  
+
   ${media.up('md')} {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -161,7 +161,7 @@ const CategoryTitle = styled.h3`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  
+
   svg {
     color: var(--primary-color);
   }
@@ -169,7 +169,7 @@ const CategoryTitle = styled.h3`
 
 const SkillItem = styled.div`
   margin-bottom: 1.25rem;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -212,7 +212,7 @@ const ResumePage = () => {
   const backendSkills = skills.filter(skill => skill.category === 'backend');
   const designSkills = skills.filter(skill => skill.category === 'design');
   const toolsSkills = skills.filter(skill => skill.category === 'tools' || skill.category === 'other');
-  
+
   return (
     <Section title="Resume" subtitle="A summary of my education, work experience, and skills.">
       <ResumeContainer>
@@ -222,17 +222,17 @@ const ResumePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <DownloadButton as="a" href={personalInfo.resume} download>
-              <FaDownload /> Download Resume
+            <DownloadButton as="a" href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+              <FaDownload /> View Resume
             </DownloadButton>
           </motion.div>
         </ResumeHeader>
-        
+
         <ResumeSection>
           <SectionTitle>
             <FaBriefcase /> Work Experience
           </SectionTitle>
-          
+
           <TimelineContainer>
             {experiences.map((experience, index) => (
               <TimelineItem
@@ -250,17 +250,17 @@ const ResumePage = () => {
                       {experience.startDate} - {experience.endDate || 'Present'}
                     </TimelineDate>
                   </TimelineHeader>
-                  
+
                   <TimelineBody>
                     <p>{experience.description}</p>
                   </TimelineBody>
-                  
+
                   <TimelineList>
                     {experience.achievements.map((achievement, i) => (
                       <li key={i}>{achievement}</li>
                     ))}
                   </TimelineList>
-                  
+
                   <TechTags>
                     {experience.technologies.map((tech) => (
                       <TechTag key={tech}>{tech}</TechTag>
@@ -271,12 +271,12 @@ const ResumePage = () => {
             ))}
           </TimelineContainer>
         </ResumeSection>
-        
+
         <ResumeSection>
           <SectionTitle>
             <FaGraduationCap /> Education
           </SectionTitle>
-          
+
           <TimelineContainer>
             {education.map((edu, index) => (
               <TimelineItem
@@ -294,11 +294,11 @@ const ResumePage = () => {
                       {edu.startDate} - {edu.endDate}
                     </TimelineDate>
                   </TimelineHeader>
-                  
+
                   <TimelineBody>
                     <p>{edu.description}</p>
                   </TimelineBody>
-                  
+
                   <TimelineList>
                     {edu.achievements.map((achievement, i) => (
                       <li key={i}>{achievement}</li>
@@ -309,12 +309,12 @@ const ResumePage = () => {
             ))}
           </TimelineContainer>
         </ResumeSection>
-        
+
         <ResumeSection>
           <SectionTitle>
             <FaCode /> Skills
           </SectionTitle>
-          
+
           <SkillsContainer>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -326,7 +326,7 @@ const ResumePage = () => {
                 <CategoryTitle>
                   <FaCode /> Frontend Development
                 </CategoryTitle>
-                
+
                 {frontendSkills.map((skill) => (
                   <SkillItem key={skill.id}>
                     <SkillInfo>
@@ -340,7 +340,7 @@ const ResumePage = () => {
                 ))}
               </SkillCategory>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -351,7 +351,7 @@ const ResumePage = () => {
                 <CategoryTitle>
                   <FaServer /> Backend Development
                 </CategoryTitle>
-                
+
                 {backendSkills.map((skill) => (
                   <SkillItem key={skill.id}>
                     <SkillInfo>
@@ -365,7 +365,7 @@ const ResumePage = () => {
                 ))}
               </SkillCategory>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -376,7 +376,7 @@ const ResumePage = () => {
                 <CategoryTitle>
                   <FaPalette /> Design
                 </CategoryTitle>
-                
+
                 {designSkills.map((skill) => (
                   <SkillItem key={skill.id}>
                     <SkillInfo>
@@ -390,7 +390,7 @@ const ResumePage = () => {
                 ))}
               </SkillCategory>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -401,7 +401,7 @@ const ResumePage = () => {
                 <CategoryTitle>
                   <FaTools /> Tools & Others
                 </CategoryTitle>
-                
+
                 {toolsSkills.map((skill) => (
                   <SkillItem key={skill.id}>
                     <SkillInfo>

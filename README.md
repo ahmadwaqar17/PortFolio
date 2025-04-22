@@ -1,11 +1,11 @@
-# Modern Portfolio Website
+# Ahmad Waqar - Software Engineer Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and Styled Components.
+A modern, responsive portfolio website showcasing my skills, projects, and experience as a Software Engineer specializing in .NET Core development.
 
 ## Features
 
 - **Responsive Design**: Mobile-first approach with responsive layouts for all devices
-- **10 Pages**: Home, About, Skills, Projects, Blog, Contact, Resume, Testimonials, Achievements, and Gallery
+- **7 Pages**: Home, About, Skills, Projects, Blog, Contact, and Resume
 - **Modern UI**: Clean and professional design with smooth animations
 - **Performance Optimized**: Fast loading times and optimized assets
 - **SEO Friendly**: Proper meta tags and semantic HTML
@@ -14,16 +14,13 @@ A modern, responsive portfolio website built with React, TypeScript, and Styled 
 
 ## Pages
 
-1. **Home**: Introduction and featured sections
+1. **Home**: Introduction, featured projects, and skills overview
 2. **About**: Personal information, work experience, and education
-3. **Skills**: Technical skills with proficiency levels
-4. **Projects**: Portfolio of projects with filtering
-5. **Blog**: Articles with categories and search
+3. **Skills**: Technical skills with proficiency levels in .NET Core, C#, and other technologies
+4. **Projects**: Portfolio of projects including E-Wakeel, MediBot, and other web applications
+5. **Blog**: Articles on software development and technology
 6. **Contact**: Contact form and information
-7. **Resume/CV**: Downloadable resume and detailed experience
-8. **Testimonials**: Client and colleague testimonials
-9. **Achievements**: Awards, certifications, and milestones
-10. **Gallery**: Visual showcase of work
+7. **Resume/CV**: Viewable resume with detailed experience
 
 ## Technologies Used
 
@@ -46,7 +43,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Styled 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/ahmadwaqar17/portfolio.git
    cd portfolio
    ```
 
@@ -82,14 +79,32 @@ The build files will be in the `dist` directory.
 - Add your projects in `src/data/projects.ts`
 - Modify skills in `src/data/skills.ts`
 - Add blog posts in `src/data/blogPosts.ts`
-- Update testimonials in `src/data/testimonials.ts`
-- Add achievements in `src/data/achievements.ts`
-- Update gallery items in `src/data/galleryItems.ts`
 - Customize theme colors in `src/styles/theme.ts`
+
+## Deployment
+
+This portfolio can be deployed on various platforms:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Firebase Hosting
+
+For free hosting, GitHub Pages or Netlify are recommended options.
 
 ## License
 
 MIT
+
+## About Me
+
+I am Ahmad Waqar, a Computer Science student at FAST University with skills in .NET Core and web development. My projects include E-Wakeel, MediBot, and various web applications. I'm passionate about creating efficient, secure, and user-friendly software solutions.
+
+## Contact
+
+- Email: ahmedwaqar2002@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/ahmad-waqar-05413021b/](https://www.linkedin.com/in/ahmad-waqar-05413021b/)
+- GitHub: [https://github.com/ahmadwaqar17](https://github.com/ahmadwaqar17)
 
 ## Acknowledgements
 
@@ -99,4 +114,3 @@ MIT
 - [Framer Motion](https://www.framer.com/motion/)
 - [React Router](https://reactrouter.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Unsplash](https://unsplash.com/) for placeholder images

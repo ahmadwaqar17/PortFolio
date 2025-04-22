@@ -9,9 +9,7 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import ResumePage from './pages/ResumePage';
-import TestimonialsPage from './pages/TestimonialsPage';
-import AchievementsPage from './pages/AchievementsPage';
-import GalleryPage from './pages/GalleryPage';
+
 import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
@@ -55,18 +53,7 @@ const router = createBrowserRouter([
         path: 'resume',
         element: <ResumePage />,
       },
-      {
-        path: 'testimonials',
-        element: <TestimonialsPage />,
-      },
-      {
-        path: 'achievements',
-        element: <AchievementsPage />,
-      },
-      {
-        path: 'gallery',
-        element: <GalleryPage />,
-      },
+
       {
         path: '*',
         element: <NotFoundPage />,

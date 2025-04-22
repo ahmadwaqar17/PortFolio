@@ -110,10 +110,10 @@ const Footer = () => {
             <h3>Ahmad's Portfolio</h3>
             <p>A showcase of my skills, projects, and professional journey as a Software Engineer.</p>
             <SocialLinks>
-              <a href="https://github.com/ahmedwaqar" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ahmadwaqar17" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/ahmad-waqar" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/ahmad-waqar-05413021b/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
               <a href="mailto:ahmedwaqar2002@gmail.com">
@@ -138,7 +138,7 @@ const Footer = () => {
             <ul>
               <li><Link to="/skills">Skills</Link></li>
               <li><Link to="/resume">Resume</Link></li>
-              <li><Link to="/testimonials">Testimonials</Link></li>
+
               <li><a href="/sitemap.xml">Sitemap</a></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             </ul>

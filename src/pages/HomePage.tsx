@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaReact, FaJs, FaHtml5, FaNodeJs, FaVuejs, FaGitAlt, FaMobileAlt, FaPencilRuler, FaDocker, FaAws, FaLaptopCode, FaRocket, FaLightbulb, FaCode, FaUserTie, FaChartLine, FaTools, FaGraduationCap, FaAward, FaStar } from 'react-icons/fa';
-import { SiTypescript, SiStyledcomponents, SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql, SiFirebase, SiJest, SiWebpack } from 'react-icons/si';
+import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaLaptopCode, FaRocket, FaLightbulb, FaCode, FaUserTie, FaChartLine, FaTools, FaGraduationCap, FaAward, FaStar, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired } from 'react-icons/fa';
+import { SiTypescript, SiExpress, SiPostgresql } from 'react-icons/si';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import ProjectCard from '../components/ui/ProjectCard';
 import SkillCard from '../components/ui/SkillCard';
-import TestimonialCard from '../components/ui/TestimonialCard';
+
 import BlogCard from '../components/ui/BlogCard';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import Badge from '../components/ui/Badge';
 import IconButton from '../components/ui/IconButton';
 import Tooltip from '../components/ui/Tooltip';
-import { projects, skills, testimonials, blogPosts, personalInfo } from '../data';
+import { projects, skills, blogPosts, personalInfo } from '../data';
 import { media } from '../styles/media';
 
 const HeroSection = styled.section`
@@ -66,12 +66,13 @@ const HeroImage = styled.div`
   ${media.up('lg')} {
     display: block;
     flex: 1;
-    max-width: 500px;
+    max-width: 400px;
 
     img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
       box-shadow: var(--box-shadow);
     }
   }
@@ -180,10 +181,7 @@ const SkillsGrid = styled.div`
   }
 `;
 
-const TestimonialsContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;
+
 
 const BlogGrid = styled.div`
   display: grid;
@@ -214,15 +212,7 @@ const SectionLink = styled(Link)`
 `;
 
 const HomePage = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
   const topSkills = skills.slice(0, 8);
@@ -272,10 +262,10 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <a href="https://github.com/ahmedwaqar" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ahmadwaqar17" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/ahmad-waqar" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/ahmad-waqar-05413021b/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
               <a href="mailto:ahmedwaqar2002@gmail.com">
@@ -356,23 +346,26 @@ const HomePage = () => {
               'FaJs': FaJs,
               'FaHtml5': FaHtml5,
               'FaNodeJs': FaNodeJs,
-              'FaVuejs': FaVuejs,
               'FaGitAlt': FaGitAlt,
-              'FaMobileAlt': FaMobileAlt,
-              'FaPencilRuler': FaPencilRuler,
               'FaDocker': FaDocker,
               'FaAws': FaAws,
+              'FaPython': FaPython,
+              'FaDatabase': FaDatabase,
+              'FaServer': FaServer,
+              'FaDesktop': FaDesktop,
+              'FaFileCode': FaFileCode,
+              'FaTerminal': FaTerminal,
+              'FaCode': FaCode,
+              'FaWindows': FaWindows,
+              'FaMicrosoft': FaMicrosoft,
+              'FaLaptop': FaLaptop,
+              'FaCodeBranch': FaCodeBranch,
+              'FaHashtag': FaHashtag,
+              'FaCogs': FaCogs,
+              'FaNetworkWired': FaNetworkWired,
               'SiTypescript': SiTypescript,
-              'SiStyledcomponents': SiStyledcomponents,
-              'SiTailwindcss': SiTailwindcss,
-              'SiNextdotjs': SiNextdotjs,
               'SiExpress': SiExpress,
-              'SiMongodb': SiMongodb,
-              'SiPostgresql': SiPostgresql,
-              'SiGraphql': SiGraphql,
-              'SiFirebase': SiFirebase,
-              'SiJest': SiJest,
-              'SiWebpack': SiWebpack
+              'SiPostgresql': SiPostgresql
             };
 
             const IconComponent = iconMap[skill.icon];
@@ -400,32 +393,7 @@ const HomePage = () => {
         </SectionLink>
       </Section>
 
-      <Section id="testimonials" title="Testimonials" background="primary">
-        <SectionSubtitle>
-          What people say about working with me.
-        </SectionSubtitle>
-        <TestimonialsContainer>
-          <motion.div
-            key={testimonials[currentTestimonial].id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <TestimonialCard
-              name={testimonials[currentTestimonial].name}
-              role={testimonials[currentTestimonial].role}
-              company={testimonials[currentTestimonial].company}
-              avatar={testimonials[currentTestimonial].avatar}
-              testimonial={testimonials[currentTestimonial].testimonial}
-              rating={testimonials[currentTestimonial].rating}
-            />
-          </motion.div>
-        </TestimonialsContainer>
-        <SectionLink to="/testimonials" style={{ color: 'white' }}>
-          View All Testimonials <FaArrowRight />
-        </SectionLink>
-      </Section>
+
 
       <Section id="blog" title="Latest Articles" background="light">
         <SectionSubtitle>

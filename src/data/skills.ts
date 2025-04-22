@@ -5,7 +5,7 @@ export const skills: Skill[] = [
   {
     id: 'c',
     title: 'C',
-    icon: 'SiC',
+    icon: 'FaHashtag',
     level: 85,
     color: '41, 128, 185',
     category: 'frontend',
@@ -14,7 +14,7 @@ export const skills: Skill[] = [
   {
     id: 'cpp',
     title: 'C++',
-    icon: 'SiCplusplus',
+    icon: 'FaCodeBranch',
     level: 80,
     color: '0, 89, 156',
     category: 'frontend',
@@ -23,7 +23,7 @@ export const skills: Skill[] = [
   {
     id: 'csharp',
     title: 'C#',
-    icon: 'SiCsharp',
+    icon: 'FaMicrosoft',
     level: 90,
     color: '104, 33, 122',
     category: 'frontend',
@@ -52,7 +52,7 @@ export const skills: Skill[] = [
   {
     id: 'dotnet-core',
     title: '.NET Core',
-    icon: 'SiDotnet',
+    icon: 'FaNetworkWired',
     level: 90,
     color: '92, 45, 145',
     category: 'backend',
@@ -91,7 +91,7 @@ export const skills: Skill[] = [
   {
     id: 'sql',
     title: 'SQL',
-    icon: 'SiMysql',
+    icon: 'FaDatabase',
     level: 85,
     color: '0, 117, 143',
     category: 'backend',
@@ -100,21 +100,13 @@ export const skills: Skill[] = [
   {
     id: 'mysql',
     title: 'MySQL',
-    icon: 'SiMysql',
+    icon: 'FaDatabase',
     level: 80,
     color: '0, 117, 143',
     category: 'backend',
     description: 'Experienced in MySQL database design, implementation, and optimization.'
   },
-  {
-    id: 'mongodb',
-    title: 'MongoDB',
-    icon: 'SiMongodb',
-    level: 85,
-    color: '76, 175, 80',
-    category: 'backend',
-    description: 'Skilled in MongoDB for NoSQL database solutions and document-oriented data storage.'
-  },
+
   {
     id: 'postgresql',
     title: 'PostgreSQL',
@@ -127,7 +119,7 @@ export const skills: Skill[] = [
   {
     id: 'mssql',
     title: 'MS SQL Server',
-    icon: 'SiMicrosoftsqlserver',
+    icon: 'FaCogs',
     level: 90,
     color: '204, 0, 0',
     category: 'backend',
@@ -138,7 +130,7 @@ export const skills: Skill[] = [
   {
     id: 'visual-studio',
     title: 'Visual Studio',
-    icon: 'SiVisualstudio',
+    icon: 'FaWindows',
     level: 90,
     color: '91, 45, 140',
     category: 'tools',
@@ -147,7 +139,7 @@ export const skills: Skill[] = [
   {
     id: 'pycharm',
     title: 'PyCharm',
-    icon: 'SiPycharm',
+    icon: 'FaPython',
     level: 75,
     color: '33, 215, 137',
     category: 'tools',
@@ -156,7 +148,7 @@ export const skills: Skill[] = [
   {
     id: 'vscode',
     title: 'VS Code',
-    icon: 'SiVisualstudiocode',
+    icon: 'FaLaptop',
     level: 90,
     color: '0, 122, 204',
     category: 'tools',
@@ -171,15 +163,7 @@ export const skills: Skill[] = [
     category: 'tools',
     description: 'Version control and collaborative development using Git workflows.'
   },
-  {
-    id: 'postman',
-    title: 'Postman',
-    icon: 'SiPostman',
-    level: 85,
-    color: '255, 108, 55',
-    category: 'tools',
-    description: 'API testing and development using Postman for efficient endpoint management.'
-  },
+
 ];
 
 export default skills;

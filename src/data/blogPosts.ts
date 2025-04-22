@@ -54,8 +54,8 @@ By following these best practices, you can build secure, efficient, and maintain
     tags: ['ASP.NET Core', 'C#', 'Web API', 'Security', 'Backend'],
     author: {
       name: 'Ahmad Waqar',
-      avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration and database management.'
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
     },
   },
   {
@@ -98,8 +98,8 @@ These hooks can significantly improve your React components by making them more 
     tags: ['React', 'JavaScript', 'Web Development', 'Frontend'],
     author: {
       name: 'Ahmad Waqar',
-      avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration and database management.'
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
     },
   },
   {
@@ -150,8 +150,8 @@ TypeScript is a powerful tool for building large-scale applications, but it requ
     tags: ['TypeScript', 'JavaScript', 'Web Development', 'Best Practices'],
     author: {
       name: 'Ahmad Waqar',
-      avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration and database management.'
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
     },
   },
   {
@@ -206,8 +206,8 @@ Responsive design has evolved beyond simple media queries and flexible grids. By
     tags: ['CSS', 'Responsive Design', 'Web Development', 'Frontend'],
     author: {
       name: 'Ahmad Waqar',
-      avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration and database management.'
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
     },
   },
   {
@@ -270,8 +270,8 @@ Optimizing Node.js applications requires a multi-faceted approach that addresses
     tags: ['Node.js', 'Performance', 'Backend', 'JavaScript'],
     author: {
       name: 'Ahmad Waqar',
-      avatar: 'https://avatars.githubusercontent.com/u/137921275?v=4',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core and MERN Stack, specializing in API integration and database management.'
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
     },
   },
 ];
