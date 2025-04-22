@@ -83,22 +83,21 @@ The build files will be in the `dist` directory.
 
 ## Deployment
 
-This portfolio can be deployed on various platforms:
+This portfolio is currently deployed on Vercel. You can also deploy it on various other platforms:
 
 - GitHub Pages
 - Netlify
-- Vercel
 - Firebase Hosting
 
-For free hosting, GitHub Pages or Netlify are recommended options.
+Vercel provides continuous deployment, automatically updating the live site whenever changes are pushed to the GitHub repository.
 
 ## License
 
 MIT
 
-## About Me
+## Live Demo
 
-I am Ahmad Waqar, a Computer Science student at FAST University with skills in .NET Core and web development. My projects include E-Wakeel, MediBot, and various web applications. I'm passionate about creating efficient, secure, and user-friendly software solutions.
+View the live portfolio: [https://port-folio-b8omwyum7.vercel.app/](https://port-folio-b8omwyum7.vercel.app/)
 
 ## Contact
 
