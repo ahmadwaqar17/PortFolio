@@ -58,5 +58,5 @@ export const personalInfo: PersonalInfo = {
       icon: 'FaLinkedin',
     }
   ],
-  resume: 'https://drive.google.com/file/d/1pf2UVBReWzHUGZtg3ZDE_M9rj2Jk2KlX/view',
+  resume: 'https://drive.google.com/file/d/1YUg1SRAoj1x7xkJlnO-1ys3_SjcfF9RW/view?usp=sharing',
 };
