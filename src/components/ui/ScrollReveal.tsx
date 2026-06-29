@@ -1,5 +1,5 @@
-import { ReactNode, useEffect, useRef } from 'react';
-import { motion, useAnimation, Variant } from 'framer-motion';
+import { ReactNode, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 interface ScrollRevealProps {

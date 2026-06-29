@@ -1,19 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaLaptopCode, FaRocket, FaLightbulb, FaCode, FaUserTie, FaChartLine, FaTools, FaGraduationCap, FaAward, FaStar, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired } from 'react-icons/fa';
-import { SiTypescript, SiExpress, SiPostgresql } from 'react-icons/si';
+import type { ComponentType } from 'react';
+import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaLaptopCode, FaRocket, FaCode, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired, FaPlug, FaRobot, FaGlobe } from 'react-icons/fa';
+import { SiTypescript, SiExpress, SiPostgresql, SiDjango, SiPandas, SiOpenai, SiGoogle, SiGooglecolab, SiPostman, SiCelery, SiRedis } from 'react-icons/si';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import ProjectCard from '../components/ui/ProjectCard';
 import SkillCard from '../components/ui/SkillCard';
 
 import BlogCard from '../components/ui/BlogCard';
-import ScrollReveal from '../components/ui/ScrollReveal';
 import Badge from '../components/ui/Badge';
-import IconButton from '../components/ui/IconButton';
-import Tooltip from '../components/ui/Tooltip';
 import { projects, skills, blogPosts, personalInfo } from '../data';
 import { media } from '../styles/media';
 
@@ -128,16 +125,6 @@ const SocialLinks = styled(motion.div)`
       color: white;
       transform: translateY(-3px);
     }
-  }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-
-  ${media.up('md')} {
-    font-size: 2.5rem;
   }
 `;
 
@@ -341,7 +328,7 @@ const HomePage = () => {
         <SkillsGrid>
           {topSkills.map((skill, index) => {
             // Map icon names to components
-            const iconMap = {
+            const iconMap: Record<string, ComponentType> = {
               'FaReact': FaReact,
               'FaJs': FaJs,
               'FaHtml5': FaHtml5,
@@ -365,7 +352,18 @@ const HomePage = () => {
               'FaNetworkWired': FaNetworkWired,
               'SiTypescript': SiTypescript,
               'SiExpress': SiExpress,
-              'SiPostgresql': SiPostgresql
+              'SiPostgresql': SiPostgresql,
+              'SiDjango': SiDjango,
+              'SiPandas': SiPandas,
+              'SiOpenai': SiOpenai,
+              'SiGoogle': SiGoogle,
+              'SiGooglecolab': SiGooglecolab,
+              'SiPostman': SiPostman,
+              'SiCelery': SiCelery,
+              'SiRedis': SiRedis,
+              'FaPlug': FaPlug,
+              'FaRobot': FaRobot,
+              'FaGlobe': FaGlobe,
             };
 
             const IconComponent = iconMap[skill.icon];

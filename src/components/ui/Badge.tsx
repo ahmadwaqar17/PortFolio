@@ -8,6 +8,7 @@ interface BadgeProps {
   size?: 'small' | 'medium' | 'large';
   icon?: ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const StyledBadge = styled(motion.span)<{
@@ -76,6 +77,7 @@ const Badge = ({
   size = 'medium',
   icon,
   className,
+  style,
 }: BadgeProps) => {
   return (
     <StyledBadge
@@ -83,6 +85,7 @@ const Badge = ({
       $size={size}
       $hasIcon={!!icon}
       className={className}
+      style={style}
       initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.3 }}

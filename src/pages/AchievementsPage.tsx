@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaAws, FaReact, FaGraduationCap, FaGithub, FaTrophy, FaGoogle, FaUserTie, FaCode } from 'react-icons/fa';
@@ -164,7 +165,7 @@ const AchievementsPage = () => {
             {filteredAchievements.length > 0 ? (
               filteredAchievements.map((achievement, index) => {
                 // Map icon names to components
-                const iconMap = {
+                const iconMap: Record<string, ComponentType> = {
                   'FaAws': FaAws,
                   'FaReact': FaReact,
                   'FaGraduationCap': FaGraduationCap,

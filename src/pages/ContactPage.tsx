@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
@@ -177,7 +178,7 @@ const ContactPage = () => {
                 <SocialLinks>
                   {personalInfo.socialLinks.map((link) => {
                     // Map icon names to components
-                    const iconMap = {
+                    const iconMap: Record<string, ComponentType> = {
                       'FaGithub': FaGithub,
                       'FaLinkedin': FaLinkedin,
                       'FaTwitter': FaTwitter
