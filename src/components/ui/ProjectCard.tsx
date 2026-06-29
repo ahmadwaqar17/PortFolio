@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Card from './Card';
-import { media } from '../../styles/media';
 
 interface ProjectCardProps {
   id: string;

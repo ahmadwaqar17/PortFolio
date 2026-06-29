@@ -265,7 +265,7 @@ const RelatedPostMeta = styled.div`
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState(blogPosts.find(p => p.id === id));
+  const [post] = useState(blogPosts.find(p => p.id === id));
   const [relatedPosts, setRelatedPosts] = useState<typeof blogPosts>([]);
   const navigate = useNavigate();
   

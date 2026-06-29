@@ -6,28 +6,19 @@ export const skills: Skill[] = [
     id: 'c',
     title: 'C',
     icon: 'FaHashtag',
-    level: 85,
+    level: 80,
     color: '41, 128, 185',
-    category: 'frontend',
-    description: 'Proficient in C programming for system-level development and algorithm implementation.'
+    category: 'other',
+    description: 'Proficient in C for system-level programming and algorithm implementation.'
   },
   {
     id: 'cpp',
     title: 'C++',
     icon: 'FaCodeBranch',
-    level: 80,
+    level: 75,
     color: '0, 89, 156',
-    category: 'frontend',
+    category: 'other',
     description: 'Experienced in C++ for object-oriented programming and application development.'
-  },
-  {
-    id: 'csharp',
-    title: 'C#',
-    icon: 'FaMicrosoft',
-    level: 90,
-    color: '104, 33, 122',
-    category: 'frontend',
-    description: 'Skilled in C# for .NET application development with a focus on web applications and services.'
   },
   {
     id: 'javascript',
@@ -36,27 +27,27 @@ export const skills: Skill[] = [
     level: 85,
     color: '247, 223, 30',
     category: 'frontend',
-    description: 'Proficient in JavaScript for frontend and backend development with modern frameworks and libraries.'
+    description: 'Proficient in JavaScript for frontend and backend development.'
   },
   {
     id: 'python',
     title: 'Python',
     icon: 'FaPython',
-    level: 75,
+    level: 90,
     color: '55, 118, 171',
-    category: 'frontend',
-    description: 'Experienced in Python for scripting, data analysis, and backend development.'
+    category: 'backend',
+    description: 'Expert in Python for web development, automation, and AI integration.'
   },
 
-  // Frameworks
+  // Frameworks & Libraries
   {
-    id: 'dotnet-core',
-    title: '.NET Core',
-    icon: 'FaNetworkWired',
+    id: 'django',
+    title: 'Django',
+    icon: 'SiDjango',
     level: 90,
-    color: '92, 45, 145',
+    color: '12, 75, 51',
     category: 'backend',
-    description: 'Building scalable and secure web applications and APIs using ASP.NET Core framework.'
+    description: 'Expert in Django for building robust web applications with multi-tenant architecture.'
   },
   {
     id: 'react',
@@ -68,24 +59,23 @@ export const skills: Skill[] = [
     description: 'Creating interactive user interfaces with React.js and its ecosystem.'
   },
   {
-    id: 'node-js',
-    title: 'Node.js',
-    icon: 'FaNodeJs',
-    level: 80,
-    color: '104, 160, 99',
+    id: 'pandas',
+    title: 'pandas',
+    icon: 'SiPandas',
+    level: 75,
+    color: '51, 102, 153',
     category: 'backend',
-    description: 'Developing server-side applications and RESTful APIs with Node.js and Express.js.'
+    description: 'Data manipulation and analysis using pandas library.'
   },
   {
-    id: 'express',
-    title: 'Express.js',
-    icon: 'SiExpress',
+    id: 'websockets',
+    title: 'WebSockets',
+    icon: 'FaPlug',
     level: 80,
     color: '68, 68, 68',
     category: 'backend',
-    description: 'Building robust web servers and APIs with Express.js framework.'
+    description: 'Real-time bidirectional communication using WebSockets.'
   },
-
 
   // Databases
   {
@@ -104,46 +94,65 @@ export const skills: Skill[] = [
     level: 80,
     color: '0, 117, 143',
     category: 'backend',
-    description: 'Experienced in MySQL database design, implementation, and optimization.'
+    description: 'Experienced in MySQL database design and implementation.'
   },
-
   {
     id: 'postgresql',
     title: 'PostgreSQL',
     icon: 'SiPostgresql',
-    level: 75,
+    level: 85,
     color: '51, 103, 145',
     category: 'backend',
-    description: 'Working with PostgreSQL for advanced relational database management.'
-  },
-  {
-    id: 'mssql',
-    title: 'MS SQL Server',
-    icon: 'FaCogs',
-    level: 90,
-    color: '204, 0, 0',
-    category: 'backend',
-    description: 'Proficient in Microsoft SQL Server for enterprise database solutions and optimization.'
+    description: 'Working with PostgreSQL for advanced relational database management in production systems.'
   },
 
-  // Tools & Others
+  // AI & Machine Learning Tools
+  {
+    id: 'openai-api',
+    title: 'OpenAI API',
+    icon: 'SiOpenai',
+    level: 85,
+    color: '0, 0, 0',
+    category: 'other',
+    description: 'Integrating OpenAI models for document parsing, classification, and validation.'
+  },
+  {
+    id: 'gemini',
+    title: 'Gemini LLM',
+    icon: 'SiGoogle',
+    level: 80,
+    color: '66, 133, 244',
+    category: 'other',
+    description: 'Building LLM-powered chatbots using Google Gemini for legal query assistance.'
+  },
+  {
+    id: 'llm-chatbots',
+    title: 'LLM Chatbots',
+    icon: 'FaRobot',
+    level: 85,
+    color: '100, 100, 100',
+    category: 'other',
+    description: 'Designing and deploying AI-driven chatbot solutions for enterprise applications.'
+  },
+
+  // Development & DevOps Tools
   {
     id: 'visual-studio',
     title: 'Visual Studio',
     icon: 'FaWindows',
-    level: 90,
+    level: 80,
     color: '91, 45, 140',
     category: 'tools',
-    description: 'Proficient in Visual Studio IDE for .NET development and debugging.'
+    description: 'Using Visual Studio for .NET and Python development.'
   },
   {
     id: 'pycharm',
     title: 'PyCharm',
     icon: 'FaPython',
-    level: 75,
+    level: 85,
     color: '33, 215, 137',
     category: 'tools',
-    description: 'Using PyCharm for Python development with advanced code analysis and debugging.'
+    description: 'Using PyCharm for Python development with advanced code analysis.'
   },
   {
     id: 'vscode',
@@ -152,7 +161,16 @@ export const skills: Skill[] = [
     level: 90,
     color: '0, 122, 204',
     category: 'tools',
-    description: 'Experienced with VS Code for web development across multiple languages and frameworks.'
+    description: 'Primary editor for web development across multiple languages and frameworks.'
+  },
+  {
+    id: 'colab',
+    title: 'Google Colab',
+    icon: 'SiGooglecolab',
+    level: 75,
+    color: '244, 194, 44',
+    category: 'tools',
+    description: 'Using Google Colab for machine learning experimentation and prototyping.'
   },
   {
     id: 'git',
@@ -163,7 +181,60 @@ export const skills: Skill[] = [
     category: 'tools',
     description: 'Version control and collaborative development using Git workflows.'
   },
-
+  {
+    id: 'postman',
+    title: 'Postman',
+    icon: 'SiPostman',
+    level: 85,
+    color: '255, 108, 62',
+    category: 'tools',
+    description: 'API testing and documentation using Postman.'
+  },
+  {
+    id: 'celery',
+    title: 'Celery',
+    icon: 'SiCelery',
+    level: 80,
+    color: '128, 186, 0',
+    category: 'backend',
+    description: 'Asynchronous task queue for handling large document batches and background jobs.'
+  },
+  {
+    id: 'redis',
+    title: 'Redis',
+    icon: 'SiRedis',
+    level: 80,
+    color: '220, 50, 50',
+    category: 'backend',
+    description: 'In-memory data store for caching, message brokering, and queuing.'
+  },
+  {
+    id: 'docker',
+    title: 'Docker',
+    icon: 'FaDocker',
+    level: 80,
+    color: '13, 109, 177',
+    category: 'tools',
+    description: 'Containerization for consistent development and deployment environments.'
+  },
+  {
+    id: 'aws',
+    title: 'AWS',
+    icon: 'FaAws',
+    level: 75,
+    color: '255, 153, 0',
+    category: 'tools',
+    description: 'Cloud services including S3, RDS, EC2, and ECR for scalable infrastructure.'
+  },
+  {
+    id: 'cicd',
+    title: 'CI/CD (GitHub Actions)',
+    icon: 'FaGithub',
+    level: 75,
+    color: '200, 200, 200',
+    category: 'tools',
+    description: 'Automating build, test, and deployment pipelines with GitHub Actions.'
+  },
 ];
 
 export default skills;

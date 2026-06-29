@@ -1,6 +1,7 @@
+import type { ComponentType } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { FaDownload, FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaUserTie } from 'react-icons/fa';
+import { FaDownload, FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import { personalInfo, experiences, education } from '../data';
@@ -192,7 +193,7 @@ const TimelineDescription = styled.p`
   margin-bottom: 1rem;
 `;
 
-const TimelineList = styled.ul`
+const TimelineList = styled.ul<{ $dir?: 'rtl' | 'ltr' }>`
   list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
@@ -202,19 +203,19 @@ const TimelineList = styled.ul`
   }
 
   ${media.up('md')} {
-    padding-left: ${({ dir }: { dir?: 'rtl' | 'ltr' }) => (dir === 'rtl' ? '0' : '1.5rem')};
-    padding-right: ${({ dir }: { dir?: 'rtl' | 'ltr' }) => (dir === 'rtl' ? '1.5rem' : '0')};
-    text-align: ${({ dir }: { dir?: 'rtl' | 'ltr' }) => (dir === 'rtl' ? 'right' : 'left')};
+    padding-left: ${({ $dir }) => ($dir === 'rtl' ? '0' : '1.5rem')};
+    padding-right: ${({ $dir }) => ($dir === 'rtl' ? '1.5rem' : '0')};
+    text-align: ${({ $dir }) => ($dir === 'rtl' ? 'right' : 'left')};
   }
 `;
 
-const TechTags = styled.div`
+const TechTags = styled.div<{ $dir?: 'rtl' | 'ltr' }>`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 
   ${media.up('md')} {
-    justify-content: ${({ dir }: { dir?: 'rtl' | 'ltr' }) => (dir === 'rtl' ? 'flex-end' : 'flex-start')};
+    justify-content: ${({ $dir }) => ($dir === 'rtl' ? 'flex-end' : 'flex-start')};
   }
 `;
 
@@ -271,10 +272,11 @@ const AboutPage = () => {
                 <SocialLinks>
                   {personalInfo.socialLinks.map((link) => {
                     // Map icon names to components
-                    const iconMap = {
+                    const iconMap: Record<string, ComponentType> = {
                       'FaGithub': FaGithub,
                       'FaLinkedin': FaLinkedin,
-                      'FaTwitter': FaTwitter
+                      'FaTwitter': FaTwitter,
+                      'FaGlobe': FaGlobe,
                     };
 
                     const IconComponent = iconMap[link.icon];
@@ -315,13 +317,13 @@ const AboutPage = () => {
                 <TimelineSubtitle>{experience.company}</TimelineSubtitle>
                 <TimelineDescription>{experience.description}</TimelineDescription>
 
-                <TimelineList dir={index % 2 === 0 ? 'rtl' : 'ltr'}>
+                <TimelineList $dir={index % 2 === 0 ? 'rtl' : 'ltr'}>
                   {experience.achievements.map((achievement, i) => (
                     <li key={i}>{achievement}</li>
                   ))}
                 </TimelineList>
 
-                <TechTags dir={index % 2 === 0 ? 'rtl' : 'ltr'}>
+                <TechTags $dir={index % 2 === 0 ? 'rtl' : 'ltr'}>
                   {experience.technologies.map((tech) => (
                     <TechTag key={tech}>{tech}</TechTag>
                   ))}

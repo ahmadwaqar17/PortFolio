@@ -116,7 +116,7 @@ const Tooltip = ({
   className,
 }: TooltipProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = () => {
     const id = setTimeout(() => {

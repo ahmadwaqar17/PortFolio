@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Card from './Card';
-import { media } from '../../styles/media';
 
 interface BlogCardProps {
   id: string;

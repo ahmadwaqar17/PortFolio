@@ -11,6 +11,9 @@ interface ButtonProps {
   as?: 'button' | 'a' | typeof Link;
   to?: string;
   href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
   onClick?: () => void;
   disabled?: boolean;
   children: React.ReactNode;
@@ -128,6 +131,9 @@ const Button = ({
   as = 'button',
   to,
   href,
+  type,
+  target,
+  rel,
   onClick,
   disabled = false,
   children,
@@ -138,6 +144,9 @@ const Button = ({
       as={as}
       to={to}
       href={href}
+      type={type}
+      target={target}
+      rel={rel}
       onClick={onClick}
       disabled={disabled}
       $variant={variant}

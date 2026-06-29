@@ -182,7 +182,7 @@ const RelatedGrid = styled.div`
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [project, setProject] = useState(projects.find(p => p.id === id));
+  const [project] = useState(projects.find(p => p.id === id));
   const [relatedProjects, setRelatedProjects] = useState<typeof projects>([]);
   const navigate = useNavigate();
   

@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaCode, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired } from 'react-icons/fa';
-import { SiTypescript, SiExpress, SiPostgresql } from 'react-icons/si';
+import { FaReact, FaJs, FaHtml5, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaPython, FaDatabase, FaServer, FaDesktop, FaFileCode, FaTerminal, FaCode, FaWindows, FaMicrosoft, FaLaptop, FaCodeBranch, FaHashtag, FaCogs, FaNetworkWired, FaPlug, FaRobot, FaGlobe, FaGithub } from 'react-icons/fa';
+import { SiTypescript, SiExpress, SiPostgresql, SiDjango, SiPandas, SiOpenai, SiGoogle, SiGooglecolab, SiPostman, SiCelery, SiRedis } from 'react-icons/si';
 import Section from '../components/ui/Section';
 import SkillCard from '../components/ui/SkillCard';
 import { skills } from '../data';
@@ -96,7 +97,7 @@ const SkillsPage = () => {
         <SkillsGrid>
           {filteredSkills.map((skill, index) => {
             // Map icon names to components
-            const iconMap = {
+            const iconMap: Record<string, ComponentType> = {
               'FaReact': FaReact,
               'FaJs': FaJs,
               'FaHtml5': FaHtml5,
@@ -120,7 +121,19 @@ const SkillsPage = () => {
               'FaNetworkWired': FaNetworkWired,
               'SiTypescript': SiTypescript,
               'SiExpress': SiExpress,
-              'SiPostgresql': SiPostgresql
+              'SiPostgresql': SiPostgresql,
+              'SiDjango': SiDjango,
+              'SiPandas': SiPandas,
+              'SiOpenai': SiOpenai,
+              'SiGoogle': SiGoogle,
+              'SiGooglecolab': SiGooglecolab,
+              'SiPostman': SiPostman,
+              'SiCelery': SiCelery,
+              'SiRedis': SiRedis,
+              'FaPlug': FaPlug,
+              'FaRobot': FaRobot,
+              'FaGlobe': FaGlobe,
+              'FaGithub': FaGithub,
             };
 
             const IconComponent = iconMap[skill.icon];
