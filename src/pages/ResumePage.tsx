@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { FaDownload, FaBriefcase, FaGraduationCap, FaCode, FaServer, FaPalette, FaTools } from 'react-icons/fa';
+import { FaDownload, FaBriefcase, FaGraduationCap, FaCode, FaServer, FaTools } from 'react-icons/fa';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import { personalInfo, experiences, education, skills } from '../data';
@@ -210,7 +210,6 @@ const ResumePage = () => {
   // Group skills by category
   const frontendSkills = skills.filter(skill => skill.category === 'frontend');
   const backendSkills = skills.filter(skill => skill.category === 'backend');
-  const designSkills = skills.filter(skill => skill.category === 'design');
   const toolsSkills = skills.filter(skill => skill.category === 'tools' || skill.category === 'other');
 
   return (
@@ -371,31 +370,6 @@ const ResumePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <SkillCategory>
-                <CategoryTitle>
-                  <FaPalette /> Design
-                </CategoryTitle>
-
-                {designSkills.map((skill) => (
-                  <SkillItem key={skill.id}>
-                    <SkillInfo>
-                      <SkillName>{skill.title}</SkillName>
-                      <SkillLevel>{skill.level}%</SkillLevel>
-                    </SkillInfo>
-                    <ProgressBar>
-                      <Progress $width={skill.level} />
-                    </ProgressBar>
-                  </SkillItem>
-                ))}
-              </SkillCategory>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <SkillCategory>
                 <CategoryTitle>

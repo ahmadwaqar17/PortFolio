@@ -24,7 +24,7 @@ export interface Skill {
   icon: string;
   level: number;
   color: string;
-  category: 'frontend' | 'backend' | 'design' | 'tools' | 'other';
+  category: 'frontend' | 'backend' | 'tools' | 'other';
   description?: string;
 }
 

@@ -395,7 +395,7 @@ const HomePage = () => {
 
       <Section id="blog" title="Latest Articles" background="light">
         <SectionSubtitle>
-          Read my latest thoughts on web development, design, and technology.
+           Read my latest thoughts on Django, Python, LangChain, and AI engineering.
         </SectionSubtitle>
         <BlogGrid>
           {latestPosts.map((post, index) => (

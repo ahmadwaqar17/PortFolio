@@ -1,277 +1,339 @@
 import { BlogPost } from './types';
 
-// Simplified blog posts data
 export const blogPosts: BlogPost[] = [
   {
-    id: 'aspnet-core-best-practices',
-    title: 'ASP.NET Core Best Practices for Building Secure Web APIs',
-    excerpt: 'Learn essential best practices for developing secure and efficient web APIs with ASP.NET Core.',
+    id: 'django-multi-tenant-saas',
+    title: 'Building Scalable Multi-Tenant SaaS Platforms with Django Tenants',
+    excerpt: 'Learn how to architect and deploy multi-tenant Django applications with strict data isolation using Django Tenants.',
     content: `
-# ASP.NET Core Best Practices for Building Secure Web APIs
+# Building Scalable Multi-Tenant SaaS Platforms with Django Tenants
 
-ASP.NET Core has become one of the most powerful frameworks for building modern web APIs. Its cross-platform capabilities, performance improvements, and robust security features make it an excellent choice for developing enterprise-grade applications. In this article, we'll explore best practices for building secure and efficient web APIs with ASP.NET Core.
+Multi-tenancy is a core architecture pattern for SaaS applications, allowing multiple organizations to share the same application while keeping their data isolated. In this article, I'll share lessons from building MoneyTalks (WealthWise), a scalable multi-tenant SaaS platform using Django Tenants.
 
-## 1. Use the Latest Version
+## Why Multi-Tenancy?
 
-Always use the latest stable version of ASP.NET Core to benefit from security updates, performance improvements, and new features.
+Serving multiple organizations from a single application instance reduces infrastructure costs and simplifies maintenance. However, data isolation, security, and performance become critical concerns.
 
-## 2. Implement Proper Authentication and Authorization
+## Django Tenants Architecture
 
-Use ASP.NET Core Identity or JWT authentication for securing your APIs. Implement role-based or policy-based authorization to control access to resources.
+Django Tenants implements the schema-based multi-tenancy approach. Each tenant gets its own PostgreSQL schema, providing strong data isolation while sharing the same database instance.
 
-## 3. Use HTTPS Everywhere
+\`\`\`python
+# settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_tenants.postgresql_backend',
+        'NAME': 'multitenant_db',
+        # ...
+    }
+}
+TENANT_MODEL = "customers.Client"
+TENANT_DOMAIN_MODEL = "customers.Domain"
+\`\`\`
 
-Always use HTTPS in production to encrypt data in transit. ASP.NET Core makes it easy to enforce HTTPS with the UseHttpsRedirection middleware.
+## Tenant-Aware Routing
 
-## 4. Implement Input Validation
+Middleware automatically routes requests to the correct tenant schema based on the request domain or subdomain.
 
-Validate all input data using model validation attributes or FluentValidation to prevent injection attacks and ensure data integrity.
+## Hierarchical Data Models
 
-## 5. Use Entity Framework Core Securely
+MoneyTalks supports complex organizational hierarchies where tenant data is further segmented by school, class, and user roles. Django Tenants handles this elegantly while maintaining query performance.
 
-Use parameterized queries or LINQ to prevent SQL injection attacks. Implement proper data access patterns like the Repository pattern.
+## Performance Considerations
 
-## 6. Implement API Versioning
-
-Use API versioning to maintain backward compatibility as your API evolves.
-
-## 7. Use Dependency Injection
-
-Leverage ASP.NET Core's built-in dependency injection container to create loosely coupled, testable components.
-
-## 8. Implement Proper Logging and Monitoring
-
-Use a logging framework like Serilog or NLog to log important events and errors. Implement application monitoring to detect issues early.
+- Shared connection pooling across schemas
+- Tenant-specific caching strategies
+- Query optimization for tenant-filtered datasets
+- Background task isolation per tenant
 
 ## Conclusion
 
-By following these best practices, you can build secure, efficient, and maintainable web APIs with ASP.NET Core that meet the demands of modern applications.
-    `,
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    date: 'July 20, 2023',
-    category: 'ASP.NET Core',
-    readTime: '10 min read',
-    tags: ['ASP.NET Core', 'C#', 'Web API', 'Security', 'Backend'],
-    author: {
-      name: 'Ahmad Waqar',
-      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
-    },
-  },
-  {
-    id: 'modern-react-hooks',
-    title: 'Modern React Hooks You Should Be Using',
-    excerpt: 'Explore the most useful React hooks that can simplify your code and improve component performance.',
-    content: `
-# Modern React Hooks You Should Be Using
-
-React Hooks have revolutionized how we write React components, allowing us to use state and other React features without writing classes. While useState and useEffect are the most commonly used hooks, there are several others that can significantly improve your code quality and component performance.
-
-## 1. useCallback
-
-The useCallback hook returns a memoized version of the callback function that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
-
-## 2. useMemo
-
-The useMemo hook is similar to useCallback but is used to memoize computed values. It can help optimize expensive calculations by caching the result and only recalculating when dependencies change.
-
-## 3. useRef
-
-The useRef hook provides a way to access DOM elements directly and persist values across renders without causing re-renders when the value changes.
-
-## 4. useReducer
-
-For complex state logic, useReducer provides a more structured approach than useState. It's particularly useful when the next state depends on the previous state or when you have multiple sub-values.
-
-## 5. useContext
-
-The useContext hook provides a way to share values between components without having to explicitly pass props through every level of the component tree.
-
-## Conclusion
-
-These hooks can significantly improve your React components by making them more concise, performant, and easier to understand. By using the right hook for the right situation, you can write cleaner code that's easier to maintain and debug.
-    `,
-    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    date: 'June 15, 2023',
-    category: 'React',
-    readTime: '8 min read',
-    tags: ['React', 'JavaScript', 'Web Development', 'Frontend'],
-    author: {
-      name: 'Ahmad Waqar',
-      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
-    },
-  },
-  {
-    id: 'typescript-best-practices',
-    title: 'TypeScript Best Practices for Large-Scale Applications',
-    excerpt: 'Learn how to structure and organize your TypeScript codebase for maintainability and scalability.',
-    content: `
-# TypeScript Best Practices for Large-Scale Applications
-
-TypeScript has become the language of choice for many developers building large-scale applications. Its static typing system helps catch errors early and provides better tooling support. However, as your application grows, you need to adopt certain practices to keep your codebase maintainable and scalable.
-
-## 1. Strict Type Checking
-
-Enable strict type checking in your tsconfig.json file. This includes strictNullChecks, noImplicitAny, and other strict flags that help catch more potential issues.
-
-## 2. Use Type Aliases and Interfaces Effectively
-
-Type aliases and interfaces help you create reusable type definitions. Use interfaces for object shapes that might be extended, and type aliases for unions, intersections, or more complex types.
-
-## 3. Organize Types in Separate Files
-
-As your application grows, organize your types in separate files to improve maintainability. You can create a 'types' directory or place type definitions alongside the components or modules they relate to.
-
-## 4. Use Generics for Reusable Components and Functions
-
-Generics allow you to create reusable components and functions that work with different types while maintaining type safety.
-
-## 5. Use Discriminated Unions for State Management
-
-Discriminated unions are a powerful pattern for managing complex state in TypeScript applications.
-
-## 6. Use Utility Types
-
-TypeScript provides several utility types that can help you transform existing types into new ones.
-
-## 7. Use Path Aliases
-
-Configure path aliases in your tsconfig.json to avoid long relative import paths.
-
-## Conclusion
-
-TypeScript is a powerful tool for building large-scale applications, but it requires discipline and good practices to fully benefit from it. By following these best practices, you can create a more maintainable, scalable, and robust codebase that's easier to work with as your application grows.
-    `,
-    image: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    date: 'May 22, 2023',
-    category: 'TypeScript',
-    readTime: '10 min read',
-    tags: ['TypeScript', 'JavaScript', 'Web Development', 'Best Practices'],
-    author: {
-      name: 'Ahmad Waqar',
-      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
-    },
-  },
-  {
-    id: 'responsive-design-techniques',
-    title: 'Advanced Responsive Design Techniques for Modern Websites',
-    excerpt: 'Discover advanced techniques for creating truly responsive websites that work on any device.',
-    content: `
-# Advanced Responsive Design Techniques for Modern Websites
-
-Responsive web design has evolved significantly since Ethan Marcotte first coined the term in 2010. Today, creating responsive websites involves much more than just flexible grids and media queries. In this article, we'll explore advanced techniques that can help you create truly responsive websites that provide an optimal experience across all devices.
-
-## 1. Mobile-First Approach
-
-The mobile-first approach involves designing for mobile devices first, then progressively enhancing the design for larger screens. This approach forces you to focus on the essential content and functionality, resulting in a more streamlined experience for all users.
-
-## 2. CSS Grid and Flexbox
-
-CSS Grid and Flexbox provide powerful layout capabilities that make responsive design much easier. Use Flexbox for one-dimensional layouts (rows or columns) and Grid for two-dimensional layouts.
-
-## 3. Fluid Typography
-
-Instead of setting fixed font sizes at different breakpoints, use fluid typography that scales smoothly based on the viewport width.
-
-## 4. Container Queries
-
-While media queries are based on the viewport size, container queries allow you to style elements based on the size of their container. This is particularly useful for reusable components that might appear in different contexts.
-
-## 5. Responsive Images
-
-Use the srcset and sizes attributes to serve different image sizes based on the device's screen size and resolution.
-
-## 6. Variable Aspect Ratio
-
-Maintain aspect ratios for embedded content like videos using the aspect-ratio property or the padding-top technique.
-
-## 7. Content-Aware Layouts
-
-Adapt your layout based on the content itself, not just the screen size. For example, you might want to display a data table differently depending on the number of columns or the length of the content.
-
-## 8. Feature Queries
-
-Use feature queries (@supports) to provide fallbacks for browsers that don't support certain CSS features.
-
-## Conclusion
-
-Responsive design has evolved beyond simple media queries and flexible grids. By incorporating these advanced techniques into your workflow, you can create websites that truly adapt to any device, screen size, or user preference.
-    `,
-    image: 'https://images.unsplash.com/photo-1546146830-2cca9512c68e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80',
-    date: 'April 10, 2023',
-    category: 'CSS',
-    readTime: '9 min read',
-    tags: ['CSS', 'Responsive Design', 'Web Development', 'Frontend'],
-    author: {
-      name: 'Ahmad Waqar',
-      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
-    },
-  },
-  {
-    id: 'nodejs-performance-optimization',
-    title: 'Node.js Performance Optimization Strategies',
-    excerpt: 'Learn how to optimize your Node.js applications for better performance and scalability.',
-    content: `
-# Node.js Performance Optimization Strategies
-
-Node.js is known for its speed and efficiency, but as your application grows, you might encounter performance bottlenecks. In this article, we'll explore various strategies to optimize your Node.js applications for better performance and scalability.
-
-## 1. Use the Latest Node.js Version
-
-Each new version of Node.js comes with performance improvements, bug fixes, and new features. Make sure you're using the latest LTS (Long Term Support) version to benefit from these improvements.
-
-## 2. Implement Caching
-
-Caching can significantly improve performance by storing frequently accessed data in memory.
-
-## 3. Use Streams for Large Data
-
-When dealing with large files or data sets, use streams instead of loading everything into memory at once.
-
-## 4. Optimize Database Queries
-
-Inefficient database queries can be a major performance bottleneck. Make sure to use indexes, select only necessary fields, and implement pagination.
-
-## 5. Implement Clustering
-
-Node.js is single-threaded, but you can use the cluster module to create multiple worker processes to take advantage of multi-core systems.
-
-## 6. Use Asynchronous Functions Properly
-
-Make sure to use async/await or Promises correctly to avoid blocking the event loop.
-
-## 7. Implement Connection Pooling
-
-For database connections, use connection pooling to reuse connections instead of creating new ones for each request.
-
-## 8. Use Compression
-
-Compress responses to reduce the amount of data sent over the network.
-
-## 9. Implement Rate Limiting
-
-Protect your application from being overwhelmed by too many requests by implementing rate limiting.
-
-## 10. Use a Reverse Proxy
-
-Place a reverse proxy like Nginx in front of your Node.js application to handle tasks like SSL termination, static file serving, and load balancing.
-
-## Conclusion
-
-Optimizing Node.js applications requires a multi-faceted approach that addresses various aspects of your application, from code structure to deployment configuration. By implementing these strategies, you can significantly improve the performance and scalability of your Node.js applications.
+Django Tenants provides a robust foundation for multi-tenant SaaS. Combined with proper indexing, caching, and async task handling, it scales to thousands of tenants without compromising data security or performance.
     `,
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1034&q=80',
-    date: 'March 5, 2023',
-    category: 'Node.js',
+    date: 'August 15, 2026',
+    category: 'Django',
     readTime: '12 min read',
-    tags: ['Node.js', 'Performance', 'Backend', 'JavaScript'],
+    tags: ['Django', 'Django Tenants', 'SaaS', 'PostgreSQL', 'Multi-Tenancy'],
     author: {
       name: 'Ahmad Waqar',
       avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
-      bio: 'Software Engineer skilled in full-stack development with .NET Core, specializing in API integration and database management.'
+      bio: 'Associate Software Engineer specializing in Python, Django, LangChain, and AI-driven backend systems.'
+    },
+  },
+  {
+    id: 'rag-langchain-langgraph',
+    title: 'Implementing Production-Grade RAG with LangChain and LangGraph',
+    excerpt: 'A practical guide to building database-powered RAG systems using LangChain agents, LangGraph workflows, and Qdrant vector search.',
+    content: `
+# Implementing Production-Grade RAG with LangChain and LangGraph
+
+Retrieval-Augmented Generation (RAG) transforms how LLMs interact with private data. At MoneyTalks, we implemented a DB-powered RAG system using LangChain agents with tool-calling to query PostgreSQL via natural language. Here's how we built it.
+
+## The RAG Pipeline
+
+Traditional RAG fetches documents from a vector store. Our approach goes further: the LLM decides when to query the database, which tables to join, and how to format results for the user.
+
+## LangChain Agents with Tool-Calling
+
+We defined database query tools that the agent can invoke:
+
+\`\`\`python
+from langchain.agents import create_tool_calling_agent
+
+tools = [
+    QueryStudentProgressTool(),
+    QueryTeacherAssignmentsTool(),
+    QueryClassAnalyticsTool(),
+]
+
+agent = create_tool_calling_agent(llm, tools, prompt)
+\`\`\`
+
+## LangGraph for Workflow Orchestration
+
+LangGraph manages multi-step reasoning workflows with state persistence, human-in-the-loop approval, and conditional branching.
+
+\`\`\`python
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(AgentState)
+workflow.add_node("retrieve", retrieve_context)
+workflow.add_node("reason", agent_step)
+workflow.add_node("validate", validate_output)
+workflow.add_edge("retrieve", "reason")
+workflow.add_conditional_edges("reason", should_continue, {
+    "validate": "validate",
+    "end": END
+})
+\`\`\`
+
+## Qdrant for Semantic Search
+
+Qdrant stores embeddings for lesson content and user queries, enabling semantic search across unstructured educational materials.
+
+## Structured Outputs & Schema Enforcement
+
+Using LangChain's with_structured_output, we enforce JSON schemas for downstream processing, ensuring type-safe responses.
+
+## Key Takeaways
+
+- Agent tool-calling reduces hallucination by grounding responses in real data
+- LangGraph provides explicit control over reasoning loops
+- Combining vector search with SQL tool-calling covers both unstructured and structured data
+- Human-in-the-loop workflows are essential for high-stakes educational applications
+    `,
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecbd995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    date: 'July 28, 2026',
+    category: 'LangChain',
+    readTime: '14 min read',
+    tags: ['LangChain', 'LangGraph', 'RAG', 'AI Agents', 'Qdrant', 'PostgreSQL'],
+    author: {
+      name: 'Ahmad Waqar',
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Associate Software Engineer specializing in Python, Django, LangChain, and AI-driven backend systems.'
+    },
+  },
+  {
+    id: 'langchain-document-classification',
+    title: 'Automating Document Classification with LangChain Agents',
+    excerpt: 'How we built an automated compliance document processing pipeline using LangChain agents for classification and data extraction.',
+    content: `
+# Automating Document Classification with LangChain Agents
+
+At Stack360, we built Altertia Compliance, a multi-tenant compliance automation platform. A core feature is automated document classification and data extraction using LangChain agents. Here's the architecture.
+
+## The Compliance Challenge
+
+Enterprises handle thousands of regulatory documents: CFDI invoices, IMSS reports, SUA files, and SAT forms. Manual classification is slow and error-prone.
+
+## LangChain Agent Design
+
+We designed a LangChain agent that:
+1. Receives an uploaded document
+2. Classifies it into the correct compliance type
+3. Extracts key data fields using schema-enforced prompts
+4. Returns structured JSON for downstream validation
+
+\`\`\`python
+from langchain.agents import AgentExecutor, create_tool_calling_agent
+
+classification_prompt = """
+Classify the document into one of: CFDI, IMSS, SAT, Infonavit.
+Extract: issuer, receiver, total_amount, date, folio.
+Return strict JSON matching the ComplianceDocument schema.
+"""
+\`\`\`
+
+## Structured Outputs & Schema Enforcement
+
+LangChain's with_structured_output ensures the agent returns data matching our Pydantic schemas, preventing invalid downstream data.
+
+## Ollama for Local LLM Inference
+
+For sensitive compliance documents, we use Ollama with Llama 3 to keep data on-premises, avoiding external API calls.
+
+## Celery and Redis for Async Processing
+
+Large document batches are processed asynchronously using Celery and Redis, with progress tracking and retry logic.
+
+## Results
+
+- 95% classification accuracy across Mexican compliance documents
+- 80% reduction in manual processing time
+- Production-ready for enterprise clients
+    `,
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    date: 'June 10, 2026',
+    category: 'LangChain',
+    readTime: '11 min read',
+    tags: ['LangChain', 'AI Agents', 'Document Classification', 'Celery', 'Ollama', 'Django'],
+    author: {
+      name: 'Ahmad Waqar',
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Associate Software Engineer specializing in Python, Django, LangChain, and AI-driven backend systems.'
+    },
+  },
+  {
+    id: 'django-websockets-real-time',
+    title: 'Building Real-Time Features with Django and WebSockets',
+    excerpt: 'Lessons from implementing real-time advocate-client communication in E-Wakeel using Django Channels and WebSockets.',
+    content: `
+# Building Real-Time Features with Django and WebSockets
+
+Real-time communication is essential for collaborative applications. In E-Wakeel, a legal support platform, we implemented real-time messaging between advocates and clients using WebSockets. Here's what we learned.
+
+## Django Channels Architecture
+
+Django Channels extends Django to handle WebSocket connections alongside traditional HTTP requests.
+
+\`\`\`python
+# routing.py
+from django.urls import re_path
+from . import consumers
+
+websocket_urlpatterns = [
+    re_path(r'ws/chat/(?P<room_name>\\w+)/$', consumers.ChatConsumer.as_asgi()),
+]
+\`\`\`
+
+## Consumer Design
+
+Consumers handle WebSocket connections, receiving and broadcasting messages to room groups.
+
+\`\`\`python
+class ChatConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        self.room_name = self.scope['url_route']['kwargs']['room_name']
+        self.room_group_name = f'chat_{self.room_name}'
+        await self.channel_layer.group_add(self.room_group_name, self.channel_name)
+        await self.accept()
+
+    async def receive(self, text_data):
+        message = json.loads(text_data)
+        await self.channel_layer.group_send(
+            self.room_group_name,
+            {'type': 'chat_message', 'message': message}
+        )
+\`\`\`
+
+## Redis as Channel Layer
+
+Redis serves as the channel layer backend, enabling message broadcasting across multiple Daphne worker processes.
+
+## Integration with React Frontend
+
+The React frontend connects to the WebSocket endpoint, handling real-time message updates and typing indicators.
+
+## Security Considerations
+
+- JWT authentication for WebSocket connections
+- Room-level permission checks
+- Message rate limiting
+- Input sanitization
+
+## Performance
+
+WebSockets reduced messaging latency from seconds (polling) to milliseconds, significantly improving the advocate-client collaboration experience.
+    `,
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    date: 'May 15, 2026',
+    category: 'Django',
+    readTime: '10 min read',
+    tags: ['Django', 'WebSockets', 'Django Channels', 'Redis', 'Real-Time', 'React'],
+    author: {
+      name: 'Ahmad Waqar',
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Associate Software Engineer specializing in Python, Django, LangChain, and AI-driven backend systems.'
+    },
+  },
+  {
+    id: 'celery-redis-async-django',
+    title: 'Scaling Django with Celery and Redis for Asynchronous Task Processing',
+    excerpt: 'How to handle large document batches and background jobs in Django using Celery, Redis, and efficient task queuing strategies.',
+    content: `
+# Scaling Django with Celery and Redis for Asynchronous Task Processing
+
+Django's request-response cycle isn't designed for long-running tasks. At Stack360 and MoneyTalks, we rely on Celery and Redis to handle document processing, report generation, and AI inference asynchronously. Here's our production setup.
+
+## The Async Challenge
+
+Processing compliance documents, generating analytics reports, and running LLM inference can take seconds to minutes. Blocking the request thread leads to timeouts and poor UX.
+
+## Celery with Redis Broker
+
+Redis serves as the Celery broker and result backend, providing fast message passing and durable task state.
+
+\`\`\`python
+# celery.py
+from celery import Celery
+
+app = Celery('portfolio')
+app.config_from_object('django.conf:settings', namespace='CELERY')
+app.autodiscover_tasks()
+\`\`\`
+
+## Task Design Patterns
+
+- **Chains**: Sequential tasks (parse document -> classify -> extract -> store)
+- **Groups**: Parallel processing of document batches
+- **Canvas**: Complex workflows with conditional branching
+
+\`\`\`python
+from celery import chain, group
+
+process_document_workflow = chain(
+    classify_document.s(document_id),
+    extract_data.s(),
+    store_results.s(),
+)
+\`\`\`
+
+## Handling Large Document Batches
+
+Altertia Compliance processes thousands of documents nightly. We use Celery groups with rate limiting and concurrency controls to avoid overwhelming the system.
+
+## Monitoring and Observability
+
+Flower provides real-time task monitoring. We track task success rates, processing times, and queue depths to detect bottlenecks early.
+
+## Error Handling and Retries
+
+Exponential backoff with jitter prevents thundering herd problems. Dead-letter queues capture failed tasks for manual review.
+
+## Conclusion
+
+Celery and Redis transform Django from a synchronous framework into a platform capable of handling enterprise-scale async workloads. Combined with proper monitoring and error handling, it's a production-ready solution.
+    `,
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80',
+    date: 'April 22, 2026',
+    category: 'Python',
+    readTime: '13 min read',
+    tags: ['Python', 'Django', 'Celery', 'Redis', 'Async', 'Background Tasks'],
+    author: {
+      name: 'Ahmad Waqar',
+      avatar: 'https://cdn2.vectorstock.com/i/1000x1000/61/41/software-language-programmer-avatar-vector-17866141.jpg',
+      bio: 'Associate Software Engineer specializing in Python, Django, LangChain, and AI-driven backend systems.'
     },
   },
 ];

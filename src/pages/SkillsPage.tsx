@@ -62,7 +62,7 @@ const SkillDescription = styled.p`
   line-height: 1.6;
 `;
 
-type SkillCategory = 'all' | 'frontend' | 'backend' | 'design' | 'tools' | 'other';
+type SkillCategory = 'all' | 'frontend' | 'backend' | 'tools' | 'other';
 
 const SkillsPage = () => {
   const [activeFilter, setActiveFilter] = useState<SkillCategory>('all');
@@ -75,7 +75,6 @@ const SkillsPage = () => {
     { value: 'all', label: 'All Skills' },
     { value: 'frontend', label: 'Frontend' },
     { value: 'backend', label: 'Backend' },
-    { value: 'design', label: 'Design' },
     { value: 'tools', label: 'Tools & Others' },
   ];
 

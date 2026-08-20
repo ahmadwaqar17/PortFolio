@@ -106,7 +106,7 @@ const BlogPage = () => {
   }, [activeCategory, searchQuery]);
   
   return (
-    <Section title="Blog" subtitle="Read my latest thoughts on web development, design, and technology.">
+    <Section title="Blog" subtitle="Read my latest thoughts on Django, Python, LangChain, and AI engineering.">
       <BlogContainer>
         <SearchContainer>
           <SearchInput
